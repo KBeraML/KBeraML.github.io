@@ -8,7 +8,7 @@
   <!-- Modern Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     /* --- THEME VARIABLES --- */
@@ -26,375 +26,146 @@
     }
 
     /* --- BASE STYLES --- */
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background-color: var(--bg-main);
       color: var(--text-main);
       font-family: var(--font-sans);
       line-height: 1.6;
       overflow-x: hidden;
     }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    a:hover {
-      color: var(--accent-hover);
-    }
-    section {
-      padding: 100px 0;
-      max-width: 1000px;
-      margin: 0 auto;
-      width: 90%;
-    }
+    a { color: var(--accent); text-decoration: none; transition: var(--transition); }
+    a:hover { color: var(--accent-hover); }
+    section { padding: 80px 0; max-width: 1000px; margin: 0 auto; width: 90%; }
+    
     .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      margin-bottom: 40px;
+      font-size: 2rem; font-weight: 600; color: #fff;
+      display: flex; align-items: center; margin-bottom: 40px;
     }
     .section-title::after {
-      content: "";
-      display: block;
-      height: 1px;
-      width: 300px;
-      background-color: var(--bg-lighter);
-      margin-left: 20px;
+      content: ""; display: block; height: 1px; width: 300px;
+      background-color: var(--bg-lighter); margin-left: 20px;
+    }
+    .sub-title {
+      font-size: 1.3rem; color: var(--accent); margin: 30px 0 15px 0; font-family: var(--font-sans);
     }
 
     /* --- NAVBAR --- */
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10, 25, 47, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      padding: 15px 0;
-      box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
+      position: fixed; top: 0; width: 100%;
+      background: rgba(10, 25, 47, 0.85); backdrop-filter: blur(10px);
+      z-index: 100; padding: 15px 0; box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
     }
     .nav-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
+      max-width: 1100px; margin: 0 auto; display: flex;
+      justify-content: space-between; align-items: center; width: 90%;
     }
-    .nav-logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 30px;
-    }
-    .nav-links a {
-      color: var(--text-main);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-logo { font-size: 1.2rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { color: var(--text-main); font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--accent); }
 
     /* --- HERO SECTION --- */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      padding-top: 80px;
+      min-height: 100vh; display: flex; align-items: center;
+      justify-content: space-between; gap: 40px; padding-top: 80px;
     }
-    .hero-text {
-      flex: 1;
-    }
-    .hero-greeting {
-      color: var(--accent);
-      font-family: var(--font-sans);
-      font-weight: 500;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .hero-name {
-      font-size: 4rem;
-      font-family: var(--font-serif);
-      color: #fff;
-      margin: 0;
-      line-height: 1.1;
-    }
-    .hero-role {
-      font-size: 2.5rem;
-      color: var(--text-muted);
-      margin: 10px 0 20px 0;
-      font-weight: 600;
-    }
-    .hero-desc {
-      color: var(--text-muted);
-      max-width: 540px;
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-    /* Dynamic Image Placeholder */
-    .hero-image-wrapper {
-      position: relative;
-      width: 300px;
-      height: 300px;
-    }
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      background: var(--bg-lighter);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      color: var(--text-muted);
-      font-family: var(--font-serif);
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-      transition: var(--transition);
-      border: 2px solid var(--accent);
-    }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-image-wrapper::after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 2px solid var(--accent);
-      border-radius: 12px;
-      top: 20px;
-      left: 20px;
-      z-index: 1;
-      transition: var(--transition);
-    }
-    .hero-image-wrapper:hover .hero-image {
-      transform: translate(5px, 5px);
-    }
-    .hero-image-wrapper:hover::after {
-      transform: translate(-5px, -5px);
-    }
-
-    /* --- RESEARCH INTERESTS (TAGS) --- */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .skill-tag {
-      background: rgba(100, 255, 218, 0.1);
-      color: var(--accent);
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid rgba(100, 255, 218, 0.3);
-      transition: var(--transition);
-    }
-    .skill-tag:hover {
-      background: rgba(100, 255, 218, 0.2);
-      transform: translateY(-2px);
-    }
-
-    /* --- EDUCATION & TIMELINE --- */
-    .timeline {
-      border-left: 2px solid var(--bg-lighter);
-      margin-left: 20px;
-      padding-left: 30px;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 40px;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -37px;
-      top: 5px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--bg-main);
-      border: 2px solid var(--accent);
-    }
-    .timeline-title {
-      font-size: 1.2rem;
-      color: #fff;
-      margin: 0 0 5px 0;
-    }
-    .timeline-subtitle {
-      color: var(--accent);
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-    .timeline-text {
-      font-size: 0.95rem;
-    }
-
-    /* --- GRIDS (Achievements & Teaching) --- */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .grid-card {
-      background: var(--bg-light);
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .grid-card:hover {
-      transform: translateY(-5px);
-      background: var(--bg-lighter);
-    }
-    .grid-card h3 {
-      color: #fff;
-      font-size: 1.1rem;
-      margin: 0 0 10px 0;
-    }
-    .grid-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin: 0;
-    }
-    .grid-date {
-      font-family: var(--font-sans);
-      color: var(--accent);
-      font-size: 0.85rem;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    /* --- PUBLICATIONS --- */
-    .paper-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .paper-item {
-      background: var(--bg-light);
-      padding: 25px 30px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      transition: var(--transition);
-    }
-    .paper-item:hover {
-      transform: translateX(10px);
-      background: var(--bg-lighter);
-    }
-    .paper-num {
-      font-size: 1.5rem;
-      color: var(--accent);
-      font-weight: 700;
-      font-family: var(--font-serif);
-      opacity: 0.5;
-    }
-    .paper-content flex {
-      flex: 1;
-    }
-    .paper-title {
-      font-size: 1.1rem;
-      color: #fff;
-      font-weight: 600;
-      margin: 0 0 8px 0;
-    }
-    .paper-authors {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 5px;
-    }
-    .paper-journal {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--accent);
-    }
-    .paper-link-btn {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      margin-top: 15px;
-      display: inline-block;
-    }
-    .paper-link-btn:hover {
-      background: rgba(100, 255, 218, 0.1);
-    }
-
-    /* --- CONTACT SECTION --- */
-    .contact-section {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact-title {
-      font-size: 3rem;
-      color: #fff;
-      font-family: var(--font-serif);
-      margin-bottom: 20px;
-    }
+    .hero-text { flex: 1; }
+    .hero-greeting { color: var(--accent); font-weight: 500; margin-bottom: 20px; display: block; }
+    .hero-name { font-size: 4rem; font-family: var(--font-serif); color: #fff; margin: 0 0 20px 0; line-height: 1.1; }
+    .hero-desc { color: var(--text-muted); max-width: 540px; font-size: 1.1rem; margin-bottom: 30px; }
+    
+    .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
     .contact-btn {
-      display: inline-block;
-      padding: 15px 30px;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      color: var(--accent);
-      font-size: 1rem;
-      margin-top: 30px;
+      display: inline-block; padding: 12px 28px;
+      border: 1px solid var(--accent); border-radius: 4px;
+      color: var(--accent); font-size: 0.95rem; font-weight: 500;
     }
-    .contact-btn:hover {
-      background: rgba(100, 255, 218, 0.1);
-    }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 50px;
-    }
-    .social-links a {
-      color: var(--text-muted);
-      font-size: 1.2rem;
-      font-weight: 600;
-      padding-bottom: 5px;
-    }
-    .social-links a:hover {
-      color: var(--accent);
-      border-bottom: 1px solid var(--accent);
-    }
+    .contact-btn:hover { background: rgba(100, 255, 218, 0.1); }
+    .contact-btn.solid { background: var(--accent); color: var(--bg-main); font-weight: 600; }
+    .contact-btn.solid:hover { background: var(--accent-hover); }
 
-    /* --- MOBILE RESPONSIVE --- */
+    /* --- HERO IMAGE --- */
+    .hero-image-wrapper { position: relative; width: 300px; height: 300px; }
+    .hero-image {
+      width: 100%; height: 100%; border-radius: 12px;
+      position: relative; z-index: 2; overflow: hidden;
+      transition: var(--transition); filter: grayscale(20%);
+    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-image-wrapper::after {
+      content: ''; display: block; position: absolute;
+      width: 100%; height: 100%; border: 2px solid var(--accent);
+      border-radius: 12px; top: 20px; left: 20px; z-index: 1; transition: var(--transition);
+    }
+    .hero-image-wrapper:hover .hero-image { transform: translate(5px, 5px); filter: grayscale(0%); }
+    .hero-image-wrapper:hover::after { transform: translate(-5px, -5px); }
+
+    /* --- SKILLS --- */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill-tag {
+      background: rgba(100, 255, 218, 0.05); color: var(--text-main);
+      padding: 8px 16px; border-radius: 4px; font-size: 0.9rem;
+      border: 1px solid var(--bg-lighter); transition: var(--transition);
+    }
+    .skill-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* --- COMPACT LISTS (Publications, Teaching, Conferences) --- */
+    .compact-list { display: flex; flex-direction: column; gap: 15px; }
+    .list-item {
+      padding: 20px; background: var(--bg-light); border-radius: 6px;
+      border-left: 3px solid var(--bg-lighter); transition: var(--transition);
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .list-item:hover { border-left-color: var(--accent); background: #15294d; transform: translateX(5px); }
+    .list-title { font-size: 1.05rem; color: #fff; font-weight: 600; margin: 0; line-height: 1.4; }
+    .list-meta { font-size: 0.9rem; color: var(--text-muted); }
+    .list-meta strong { color: var(--text-main); font-weight: 500; }
+    .list-highlight { color: var(--accent); font-style: italic; font-size: 0.9rem; }
+    .list-link { display: inline-block; margin-top: 8px; font-size: 0.85rem; font-weight: 500; }
+    .list-link::after { content: ' ↗'; }
+
+    /* --- SLEEK TABLE/ROW STYLE (Achievements) --- */
+    .row-item {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: 15px 0; border-bottom: 1px solid var(--bg-lighter); transition: var(--transition);
+    }
+    .row-item:hover { padding-left: 10px; padding-right: 10px; background: rgba(255,255,255,0.02); }
+    .row-left { display: flex; flex-direction: column; }
+    .row-title { color: #fff; font-weight: 600; font-size: 1rem; }
+    .row-desc { color: var(--text-muted); font-size: 0.9rem; }
+    .row-right { color: var(--accent); font-size: 0.9rem; font-family: monospace; white-space: nowrap; text-align: right; }
+
+    /* --- ALBUM GALLERY --- */
+    .album-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px; margin-top: 30px;
+    }
+    .photo-card {
+      position: relative; border-radius: 8px; overflow: hidden;
+      aspect-ratio: 1 / 1; background: var(--bg-lighter); cursor: pointer;
+    }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .photo-card:hover img { transform: scale(1.08); }
+    .photo-overlay {
+      position: absolute; bottom: 0; left: 0; width: 100%;
+      padding: 20px 15px 15px; background: linear-gradient(transparent, rgba(2,12,27,0.9));
+      color: #fff; font-weight: 600; font-size: 0.95rem;
+      transform: translateY(100%); transition: transform 0.3s ease;
+    }
+    .photo-card:hover .photo-overlay { transform: translateY(0); }
+
+    /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
       .hero { flex-direction: column; text-align: center; justify-content: center; }
       .hero-name { font-size: 3rem; }
-      .hero-role { font-size: 1.8rem; }
+      .btn-group { justify-content: center; }
       .hero-image-wrapper { margin: 40px auto 0 auto; }
-      .nav-links { display: none; } /* Use a hamburger menu for full build, hidden for simplicity here */
-      .paper-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .nav-links { display: none; } 
       .section-title::after { width: 100px; }
+      .row-item { flex-direction: column; gap: 5px; }
+      .row-right { text-align: left; }
     }
   </style>
 </head>
@@ -403,13 +174,13 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-content">
-      <div class="nav-logo">KB.</div>
+      <div class="nav-logo">Koushik Bera</div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#album">Memories</a>
       </div>
     </div>
   </nav>
@@ -419,20 +190,17 @@
     <div class="hero-text">
       <span class="hero-greeting">Hi, my name is</span>
       <h1 class="hero-name">Koushik Bera.</h1>
-      <h2 class="hero-role">I forecast financial volatility.</h2>
       <p class="hero-desc">
-        I am a Senior Research Scholar in the Department of Mathematics at <b>IIT Guwahati</b>, working under the supervision of Prof. N. Selvaraju. Originally from Midnapore, West Bengal, I specialize in hybrid volatility prediction models and financial econometrics.
+        I am a Senior Research Scholar in the Department of Mathematics at <b>IIT Guwahati</b>, working under the supervision of Prof. N. Selvaraju. Originally from Midnapore, West Bengal, my Ph.D. thesis focuses on statistical and deep learning approaches to volatility forecasting in financial time series.
       </p>
-      <a href="#contact" class="contact-btn">Get In Touch</a>
+      <div class="btn-group">
+        <a href="mailto:koushik.bera@iitg.ac.in" class="contact-btn solid">Get In Touch</a>
+        <a href="mycv.pdf" target="_blank" class="contact-btn">Download CV</a>
+      </div>
     </div>
     
-    <!-- IMAGE PLACEHOLDER -->
     <div class="hero-image-wrapper">
       <div class="hero-image">
-        <!-- 
-          To add your real photo, replace the "KB" text below with an img tag like this:
-          <img src="photo.png" alt="Koushik Bera"> 
-        -->
         <img src="photo.png" alt="Koushik Bera">
       </div>
     </div>
@@ -452,217 +220,291 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS (Cleaned and Numbered 1-7) -->
+  <!-- PUBLICATIONS -->
   <section id="publications">
-    <h2 class="section-title">Selected Publications</h2>
-    <div class="paper-list">
-      
-      <div class="paper-item">
-        <div class="paper-num">01</div>
-        <div class="paper-content">
-          <h3 class="paper-title">Forecasting Financial Volatility: A Hybrid Approach Integrating ICEEMDAN and Asymmetric Volatility Models</h3>
-          <div class="paper-authors">Koushik Bera, Prakash Raj, N Selvaraju</div>
-          <div class="paper-journal">Journal of Financial Data Science, 7(1), 54–75, 2025</div>
-          <a href="https://doi.org/10.3905/jfds.2024.1.174" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-num">02</div>
-        <div class="paper-content">
-          <h3 class="paper-title">High frequency volatility forecasting and risk assessment using neural networks-based heteroscedasticity model</h3>
-          <div class="paper-authors">Aryan Bhambu, Koushik Bera, Selvaraju Natarajan, Ponnuthurai Nagaratnam Suganthan</div>
-          <div class="paper-journal">Engineering Applications of Artificial Intelligence, 149, 110397, 2025</div>
-          <a href="https://doi.org/10.1016/j.engappai.2025.110397" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-num">03</div>
-        <div class="paper-content">
-          <h3 class="paper-title">A Heteroscedastic Neural Network Framework for Volatility Prediction</h3>
-          <div class="paper-authors">Koushik Bera, Aryan Bhambu, N Selvaraju, Prakash Raj</div>
-          <div class="paper-journal">Optimization and Artificial Intelligent Strategies for Engineering and Management, BS Publications, 60–67, 2025</div>
-          <a href="https://doi.org/10.37285/bsp.oaisem2025.09" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-num">04</div>
-        <div class="paper-content">
-          <h3 class="paper-title">Behavioral robust mean-variance portfolio selection with an intractable claim</h3>
-          <div class="paper-authors">Arindam Maity, Koushik Bera, N Selvaraju</div>
-          <div class="paper-journal">Mathematics and Financial Economics, 2025</div>
-          <a href="https://doi.org/10.1007/s11579-025-00386-2" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-num">05</div>
-        <div class="paper-content">
-          <h3 class="paper-title">A hybrid model for intraday volatility prediction in Bitcoin markets</h3>
-          <div class="paper-authors">Prakash Raj, Koushik Bera, N Selvaraju</div>
-          <div class="paper-journal">The North-American Journal of Economics and Finance, 78, 102426, 2025</div>
-          <a href="https://doi.org/10.1016/j.najef.2025.102426" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-num">06</div>
-        <div class="paper-content">
-          <h3 class="paper-title">An Integrated Framework for Volatility Prediction: Leveraging Decomposition Techniques with Realized GARCH Models</h3>
-          <div class="paper-authors">Koushik Bera, Prakash Raj, N Selvaraju</div>
-          <div class="paper-journal">Computational Economics, 2025</div>
-          <a href="https://link.springer.com/article/10.1007/s10614-025-10930-3" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-      <div class="paper-item">
-        <div class="paper-num">07</div>
-        <div class="paper-content">
-          <h3 class="paper-title">Power of decomposition in volatility forecasting for Bitcoins</h3>
-          <div class="paper-authors">Prakash Raj, Koushik Bera, N Selvaraju</div>
-          <div class="paper-journal">Pacific-Basin Finance Journal, 93, 102839, 2025</div>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0927538X25001763?via%3Dihub" target="_blank" class="paper-link-btn">View Article</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EDUCATION & ACADEMICS -->
-  <section id="experience">
-    <h2 class="section-title">Academic Journey</h2>
-    <div class="timeline">
-      
-      <div class="timeline-item">
-        <h3 class="timeline-title">Ph.D. Candidate</h3>
-        <div class="timeline-subtitle">Indian Institute of Technology, Guwahati (July 2021 – Present)</div>
-      </div>
-
-      <div class="timeline-item">
-        <h3 class="timeline-title">M.Sc in Mathematics</h3>
-        <div class="timeline-subtitle">Indian Institute of Technology, Bhubaneswar (2019 – 2021)</div>
-        <div class="timeline-text">Awarded Best Thesis Award for MSc Project (2021)</div>
-      </div>
-
-      <div class="timeline-item">
-        <h3 class="timeline-title">B.Sc (Hons) in Mathematics</h3>
-        <div class="timeline-subtitle">Midnapore College Autonomous (2016 – 2019)</div>
-        <div class="timeline-text">Affiliated to Vidyasagar University, West Bengal</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ACHIEVEMENTS GRID -->
-  <section>
-    <h2 class="section-title">Notable Achievements</h2>
-    <div class="grid-container">
-      <div class="grid-card">
-        <span class="grid-date">July 2021</span>
-        <h3>Junior Research Fellowship (JRF)</h3>
-        <p>Indian Institute of Technology, Guwahati</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Nov 2020, June 2021</span>
-        <h3>CSIR-UGC NET (JRF+NET)</h3>
-        <p>Qualified Twice</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">2021, 2023</span>
-        <h3>GATE Qualified</h3>
-        <p>Mathematics & Statistics</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">2019</span>
-        <h3>JAM Qualified</h3>
-        <p>Mathematics & Statistics</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">2016–2021</span>
-        <h3>INSPIRE Scholarship</h3>
-        <p>Department of Science & Technology</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONFERENCES & WORKSHOPS -->
-  <section>
-    <h2 class="section-title">Conferences & Workshops</h2>
-    <div class="grid-container">
-      <div class="grid-card">
-        <span class="grid-date">Dec 2024</span>
-        <h3>IndoML</h3>
-        <p>BITS Pilani Goa Campus</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Oct 2024</span>
-        <h3>Optimization with AI & Soft-Computing</h3>
-        <p>NIT Nagaland</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Dec 2023</span>
-        <h3>Statistical Methods in Finance</h3>
-        <p>Chennai Mathematical Institute</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Jan 2023</span>
-        <h3>Bombay Workshop on Statistics</h3>
-        <p>IIT Bombay</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEACHING ASSISTANTSHIP -->
-  <section>
-    <h2 class="section-title">Teaching Assistantship</h2>
-    <div class="grid-container">
-      <div class="grid-card">
-        <span class="grid-date">Current</span>
-        <h3>MA374: Financial Engineering Lab</h3>
-        <p>Jan 2025 – May 2025</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Current</span>
-        <h3>NPTEL: Queueing Theory</h3>
-        <p>Jan 2025 – Jul 2025</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Past</span>
-        <h3>Coursera DA 206: Statistical Inferencing</h3>
-        <p>Dec 2024 – Apr 2025</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Past</span>
-        <h3>MA225: Probability & Random Process</h3>
-        <p>Jul 2024 – Nov 2024</p>
-      </div>
-      <div class="grid-card">
-        <span class="grid-date">Past</span>
-        <h3>MA101: Real Analysis & Calculus</h3>
-        <p>Nov 2022 – Mar 2023</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact-section">
-    <h2 class="section-title" style="justify-content: center;">Get In Touch</h2>
-    <h3 class="contact-title">Let's Connect.</h3>
-    <p class="hero-desc" style="margin: 0 auto;">
-      Currently working from the Old Research Scholar Lab, Department of Mathematics, IIT Guwahati, Assam (781039). I am always open to discussing research collaborations or academic opportunities.
-    </p>
-    <a href="mailto:koushik.bera@iitg.ac.in" class="contact-btn">Email IITG</a>
-    <a href="mailto:koushikbera59@gmail.com" class="contact-btn" style="margin-left: 15px;">Email Personal</a>
+    <h2 class="section-title">Publications</h2>
     
-    <div class="social-links">
-      <a href="https://scholar.google.com/citations?hl=en&user=W2U2i5IAAAAJ" target="_blank">Google Scholar</a>
-      <a href="https://www.researchgate.net/profile/Koushik-Bera" target="_blank">ResearchGate</a>
-      <a href="https://orcid.org/0009-0003-5086-7809" target="_blank">ORCID</a>
-      <a href="https://www.facebook.com/bera.koushik.12" target="_blank">Facebook</a>
+    <h3 class="sub-title">Journal Articles</h3>
+    <div class="compact-list">
+      <div class="list-item">
+        <h4 class="list-title">A leakage-free optimized Variational Mode Decomposition-based state space framework for crude oil volatility forecasting</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, N. Selvaraju</div>
+        <div class="list-highlight">Energy and AI, 25, 100781, 2026</div>
+        <a href="https://doi.org/10.1016/j.egyai.2026.100781" target="_blank" class="list-link">DOI: 10.1016/j.egyai.2026.100781</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">A Heteroscedasticity-based Extended Long Short Term Memory Network for Volatility Forecasting and Risk Estimation</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, A. Bhambu, N. Selvaraju</div>
+        <div class="list-highlight">Applied Soft Computing, 115627, 2026</div>
+        <a href="https://doi.org/10.1016/j.asoc.2026.115627" target="_blank" class="list-link">DOI: 10.1016/j.asoc.2026.115627</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Extended-Horizon Realized Volatility Forecasting Using State Space Models</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, N. Selvaraju</div>
+        <div class="list-highlight">Systems and Soft Computing, 7, 200427, 2025</div>
+        <a href="https://doi.org/10.1016/j.sasc.2025.200427" target="_blank" class="list-link">DOI: 10.1016/j.sasc.2025.200427</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">An Integrated Framework for Volatility Prediction: Leveraging Decomposition Techniques with Realized GARCH Models</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, P. Raj, N. Selvaraju</div>
+        <div class="list-highlight">Computational Economics, 67, 3275–3309, 2026</div>
+        <a href="https://doi.org/10.1007/s10614-025-10930-3" target="_blank" class="list-link">DOI: 10.1007/s10614-025-10930-3</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Forecasting Financial Volatility: A Hybrid Approach Integrating ICEEMDAN and Asymmetric Volatility Models</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, P. Raj, N. Selvaraju</div>
+        <div class="list-highlight">Journal of Financial Data Science, 7(1), 54-75, 2025</div>
+        <a href="https://doi.org/10.3905/jfds.2024.1.174" target="_blank" class="list-link">DOI: 10.3905/jfds.2024.1.174</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Behavioral robust mean-variance portfolio selection with an intractable claim</h4>
+        <div class="list-meta">A. Maity, <strong>Koushik Bera</strong>, N. Selvaraju</div>
+        <div class="list-highlight">Mathematics and Financial Economics, 1-29, 2025</div>
+        <a href="https://doi.org/10.1007/s11579-025-00386-2" target="_blank" class="list-link">DOI: 10.1007/s11579-025-00386-2</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">High frequency volatility forecasting and risk assessment using neural networks-based heteroscedasticity model</h4>
+        <div class="list-meta">A. Bhambu, <strong>Koushik Bera</strong>, N. Selvaraju, P. N. Suganthan</div>
+        <div class="list-highlight">Engineering Applications of Artificial Intelligence, 149, 110397, 2025</div>
+        <a href="https://doi.org/10.1016/j.engappai.2025.110397" target="_blank" class="list-link">DOI: 10.1016/j.engappai.2025.110397</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">A hybrid model for intraday volatility prediction in Bitcoin markets</h4>
+        <div class="list-meta">P. Raj, <strong>Koushik Bera</strong>, N. Selvaraju</div>
+        <div class="list-highlight">The North American Journal of Economics and Finance, 78, 102426, 2025</div>
+        <a href="https://doi.org/10.1016/j.najef.2025.102426" target="_blank" class="list-link">DOI: 10.1016/j.najef.2025.102426</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Power of Decomposition in Volatility Forecasting for Bitcoins</h4>
+        <div class="list-meta">P. Raj, <strong>Koushik Bera</strong>, N. Selvaraju</div>
+        <div class="list-highlight">Pacific-Basin Finance Journal, 93, 102839, 2025</div>
+        <a href="https://doi.org/10.1016/j.pacfin.2025.102839" target="_blank" class="list-link">DOI: 10.1016/j.pacfin.2025.102839</a>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Conference Proceedings</h3>
+    <div class="compact-list">
+      <div class="list-item">
+        <h4 class="list-title">A Heteroscedastic Neural Network Framework for Volatility Prediction</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, A. Bhambu, P. Raj, N. Selvaraju</div>
+        <div class="list-highlight">ICOAISC-2024, NIT Nagaland, 2024</div>
+        <a href="https://doi.org/10.37285/bsp.oaisem2025.09" target="_blank" class="list-link">DOI: 10.37285/bsp.oaisem2025.09</a>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Deep Learning Based Decomposition Methods for Financial Volatility Forecasting</h4>
+        <div class="list-meta">A. Bhambu, <strong>Koushik Bera</strong>, P. Raj, N. Selvaraju</div>
+        <div class="list-highlight">Current Progress in Interdisciplinary Research; RIC, Vol 3, Springer, 2025</div>
+        <a href="https://doi.org/10.1007/978-981-95-1853-1_21" target="_blank" class="list-link">DOI: 10.1007/978-981-95-1853-1_21</a>
+      </div>
+    </div>
+
+    <h3 class="sub-title">Communicated Articles</h3>
+    <div class="compact-list">
+      <div class="list-item">
+        <h4 class="list-title">High-frequency Volatility Modeling with Realized Measures: A Comprehensive Asymmetric Model</h4>
+        <div class="list-meta">P. Raj, <strong>Koushik Bera</strong>, N. Selvaraju</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Volatility Forecasting: A Bootstrap-Enhanced Deep Neural Network Approach</h4>
+        <div class="list-meta">P. Raj, A. Bhambu, <strong>Koushik Bera</strong>, N. Selvaraju</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Volatility-Driven Portfolio Optimization with Advanced Volatility Forecasting Models</h4>
+        <div class="list-meta"><strong>Koushik Bera</strong>, N. Selvaraju</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Does the Distribution of Financial Returns Matter? Insights from Fat-Tailed Models in Volatility Forecasting</h4>
+        <div class="list-meta">P. Raj, <strong>Koushik Bera</strong>, A. Bhambu, N. Selvaraju, A. Sinha</div>
+      </div>
     </div>
   </section>
+
+  <!-- ACADEMIC EXPERIENCE & ACHIEVEMENTS -->
+  <section id="experience">
+    <h2 class="section-title">Academic Achievements</h2>
+    <div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">Best Poster Presentation Award</span>
+          <span class="row-desc">RTQF 2026, IISc Bangalore</span>
+        </div>
+        <div class="row-right">Feb 2026</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">GATE Statistics (AIR-96)</span>
+        </div>
+        <div class="row-right">2023</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">Joint CSIR-UGC NET (JRF, AIR-144)</span>
+        </div>
+        <div class="row-right">June 2021</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">Best Thesis Award</span>
+          <span class="row-desc">MSc Project, IIT Bhubaneswar</span>
+        </div>
+        <div class="row-right">2020 - 2021</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">GATE Mathematics (AIR-568)</span>
+        </div>
+        <div class="row-right">2021</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">IIT JAM Mathematics (AIR-326) & Statistics (AIR-274)</span>
+        </div>
+        <div class="row-right">2019</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">INSPIRE Scholarship</span>
+          <span class="row-desc">Innovation in Science Pursuit for Inspired Research</span>
+        </div>
+        <div class="row-right">2016 - 2021</div>
+      </div>
+    </div>
+
+    <h3 class="sub-title" style="margin-top: 60px;">Teaching Assistantship</h3>
+    <div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">MA 225: Probability Theory & Random Process</span>
+          <span class="row-desc">IIT Guwahati</span>
+        </div>
+        <div class="row-right">Jul 23 – Nov 25</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">DA 210: Time Series Analysis & Forecasting</span>
+          <span class="row-desc">Coursera</span>
+        </div>
+        <div class="row-right">May 25 – Aug 25</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">MA 374: Financial Engineering Laboratory</span>
+          <span class="row-desc">IIT Guwahati</span>
+        </div>
+        <div class="row-right">Jan 24 – May 25</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">MOOC: Introduction to Queueing Theory</span>
+          <span class="row-desc">NPTEL</span>
+        </div>
+        <div class="row-right">Jan 24 – Jul 25</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">DA 206: Statistical Inferencing</span>
+          <span class="row-desc">Coursera</span>
+        </div>
+        <div class="row-right">Dec 24 – Jun 25</div>
+      </div>
+      <div class="row-item">
+        <div class="row-left">
+          <span class="row-title">MA 101: Real Analysis, Single & Multivariable Calculus</span>
+          <span class="row-desc">IIT Guwahati</span>
+        </div>
+        <div class="row-right">Nov 22 – Mar 23</div>
+      </div>
+    </div>
+
+    <h3 class="sub-title" style="margin-top: 60px;">Workshops & Conferences</h3>
+    <div class="compact-list">
+      <div class="list-item">
+        <h4 class="list-title">Recent Trends in Quantitative Finance (RTQF 2026)</h4>
+        <div class="list-highlight">IISc Bangalore</div>
+        <div class="list-meta">February 20-21, 2026</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">The Fifth Indian Symposium on Machine Learning (IndoML)</h4>
+        <div class="list-highlight">BITS Pilani Goa Campus</div>
+        <div class="list-meta">December 21-23, 2024</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">International Conference On Optimization with AI and Soft-Computing</h4>
+        <div class="list-highlight">NIT Nagaland</div>
+        <div class="list-meta">September 30 - October 1, 2024</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">International Workshop & Conference on Statistical Methods in Finance</h4>
+        <div class="list-highlight">Chennai Mathematical Institute</div>
+        <div class="list-meta">December 19-23, 2023</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">Bombay Workshop on Statistics and Probability</h4>
+        <div class="list-highlight">IIT Bombay</div>
+        <div class="list-meta">January 3-6, 2023</div>
+      </div>
+      <div class="list-item">
+        <h4 class="list-title">ATM Schools: Advanced Topics in Statistical Learning</h4>
+        <div class="list-highlight">Indian Statistical Institute, Kolkata</div>
+        <div class="list-meta">July 11-23, 2022</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALBUM / MEMORIES SECTION -->
+  <section id="album">
+    <h2 class="section-title">Memories & Journey</h2>
+    <p style="color: var(--text-muted); margin-bottom: 20px;">A look back at the moments that shaped my academic journey across BSc, MSc, and PhD.</p>
+    
+    <div class="album-grid">
+      <!-- BSc Photos -->
+      <div class="photo-card">
+        <img src="bsc1.jpg" alt="BSc Memory 1">
+        <div class="photo-overlay">B.Sc. Days - Midnapore College</div>
+      </div>
+      <div class="photo-card">
+        <img src="bsc2.jpg" alt="BSc Memory 2">
+        <div class="photo-overlay">B.Sc. Days - Midnapore College</div>
+      </div>
+      <div class="photo-card">
+        <img src="bsc3.jpg" alt="BSc Memory 3">
+        <div class="photo-overlay">B.Sc. Days - Midnapore College</div>
+      </div>
+      
+      <!-- MSc Photos -->
+      <div class="photo-card">
+        <img src="msc1.jpg" alt="MSc Memory 1">
+        <div class="photo-overlay">M.Sc. Days - IIT Bhubaneswar</div>
+      </div>
+      <div class="photo-card">
+        <img src="msc2.jpg" alt="MSc Memory 2">
+        <div class="photo-overlay">M.Sc. Days - IIT Bhubaneswar</div>
+      </div>
+      <div class="photo-card">
+        <img src="msc3.jpg" alt="MSc Memory 3">
+        <div class="photo-overlay">M.Sc. Days - IIT Bhubaneswar</div>
+      </div>
+
+      <!-- PhD Photos -->
+      <div class="photo-card">
+        <img src="phd1.jpg" alt="PhD Memory 1">
+        <div class="photo-overlay">Ph.D. Days - IIT Guwahati</div>
+      </div>
+      <div class="photo-card">
+        <img src="phd2.jpg" alt="PhD Memory 2">
+        <div class="photo-overlay">Ph.D. Days - IIT Guwahati</div>
+      </div>
+      <div class="photo-card">
+        <img src="phd3.jpg" alt="PhD Memory 3">
+        <div class="photo-overlay">Ph.D. Days - IIT Guwahati</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="text-align: center; padding: 30px; margin-top: 50px; font-family: monospace; color: var(--text-muted); font-size: 0.85rem;">
+    <p>Designed for Dr. Koushik Bera</p>
+  </footer>
 
 </body>
 </html>
