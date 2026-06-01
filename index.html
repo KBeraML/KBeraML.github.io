@@ -114,6 +114,32 @@
     }
     .skill-tag:hover { background: rgba(100, 255, 218, 0.15); transform: translateY(-2px); border-color: var(--accent); }
 
+    /* --- EDUCATION TIMELINE --- */
+    .edu-timeline { position: relative; max-width: 900px; margin: 0 auto; padding-left: 30px; }
+    .edu-timeline::before {
+      content: ''; position: absolute; left: 6px; top: 0; bottom: 0;
+      width: 2px; background: rgba(100, 255, 218, 0.2);
+    }
+    .edu-card {
+      position: relative; background: var(--bg-light); padding: 25px;
+      border-radius: 8px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(2,12,27,0.5);
+      border: 1px solid transparent; transition: var(--transition);
+    }
+    .edu-card::before {
+      content: ''; position: absolute; left: -31px; top: 30px; width: 14px; height: 14px;
+      border-radius: 50%; background: var(--bg-main); border: 2px solid var(--accent);
+      transition: var(--transition);
+    }
+    .edu-card:hover { border-color: rgba(100,255,218,0.3); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(2,12,27,0.7); }
+    .edu-card:hover::before { background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+    
+    .edu-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 8px; }
+    .edu-degree { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 0; }
+    .edu-year { font-family: monospace; color: var(--accent); font-size: 0.95rem; background: rgba(100, 255, 218, 0.1); padding: 4px 10px; border-radius: 4px; }
+    .edu-inst { font-size: 1.05rem; color: var(--text-main); margin-bottom: 12px; font-weight: 500; }
+    .edu-details { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 10px; }
+    .edu-grade { display: inline-block; color: #fff; font-size: 0.9rem; font-weight: 600; border-left: 2px solid var(--accent); padding-left: 10px; }
+
     /* --- PUBLICATIONS (CARD STYLE) --- */
     .paper-card {
       display: flex; align-items: flex-start; background: var(--bg-light);
@@ -220,6 +246,9 @@
       .nav-links { display: none; } 
       .section-title::after { width: 100px; }
       .meta-row { flex-direction: column; gap: 10px; }
+      .edu-timeline { padding-left: 15px; }
+      .edu-timeline::before { left: -9px; }
+      .edu-card::before { left: -26px; }
     }
   </style>
 </head>
@@ -232,6 +261,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#education">Education</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -271,6 +301,67 @@
       <div class="skill-tag">Risk Forecasting</div>
       <div class="skill-tag">High-Frequency Financial Data Analysis</div>
       <div class="skill-tag">Portfolio Optimisation</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION TIMELINE -->
+  <section id="education">
+    <h2 class="section-title">Academic Journey</h2>
+    <div class="edu-timeline">
+      
+      <div class="edu-card">
+        <div class="edu-header">
+          <h3 class="edu-degree">Ph.D. in Mathematics</h3>
+          <span class="edu-year">2021 - Present</span>
+        </div>
+        <div class="edu-inst">Indian Institute of Technology Guwahati</div>
+        <div class="edu-details">
+          <strong>Thesis Title:</strong> Statistical and Deep Learning Approaches to Volatility Forecasting in Financial Time Series across Diverse Financial Markets.<br><br>
+          <strong>Status:</strong> Thesis submitted; Ph.D. defence by end of June 2026.<br>
+          <strong>Supervisor:</strong> Prof. Selvaraju Natarajan
+        </div>
+        <div class="edu-grade">CGPA: 9.02</div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-header">
+          <h3 class="edu-degree">M.Sc. in Mathematics</h3>
+          <span class="edu-year">2019 - 2021</span>
+        </div>
+        <div class="edu-inst">Indian Institute of Technology Bhubaneswar</div>
+        <div class="edu-details">
+          Awarded Best Thesis Award for MSc Project.
+        </div>
+        <div class="edu-grade">CGPA: 9.06</div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-header">
+          <h3 class="edu-degree">B.Sc. (Hons.) in Mathematics</h3>
+          <span class="edu-year">2016 - 2019</span>
+        </div>
+        <div class="edu-inst">Midnapore College (Autonomous), Vidyasagar University</div>
+        <div class="edu-grade">Score: 79.38%</div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-header">
+          <h3 class="edu-degree">Higher Secondary</h3>
+          <span class="edu-year">2016</span>
+        </div>
+        <div class="edu-inst">WBCHSE Board</div>
+        <div class="edu-grade">Score: 92.00%</div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-header">
+          <h3 class="edu-degree">Secondary</h3>
+          <span class="edu-year">2014</span>
+        </div>
+        <div class="edu-inst">WBBSE Board</div>
+        <div class="edu-grade">Score: 84.71%</div>
+      </div>
+
     </div>
   </section>
 
@@ -688,6 +779,10 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
+  <footer style="text-align: center; padding: 30px; margin-top: 50px; font-family: monospace; color: var(--text-muted); font-size: 0.85rem;">
+    <p>Designed for Dr. Koushik Bera</p>
+  </footer>
 
 </body>
 </html>
